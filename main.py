@@ -16,7 +16,7 @@ def get_english_words():
 
         soup = BeautifulSoup(response.content, "html.parser")
 
-        # получаем слово и его определение:
+        # получаем слово и его определение на английском:
         english_word = soup.find("div", id="random_word").text.strip()
         word_definition = soup.find("div", id="random_word_definition").text.strip()
 
@@ -24,7 +24,7 @@ def get_english_words():
         russian_word = translate_to_russian(english_word)
         russian_definition = translate_to_russian(word_definition)
 
-        # возвращаем словарь
+        # возвращаем словарь:
         return {
             "english_word": english_word,
             "word_definition": word_definition,
